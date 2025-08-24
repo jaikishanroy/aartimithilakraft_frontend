@@ -1,0 +1,335 @@
+body{
+    background-color: #fff;
+}
+
+.bckgrnd{
+    background-image: url("../../public/assets/img/banner/shop_banner.png");
+}
+
+.slider-container {
+    width: 100%;
+    margin: auto;
+    height: 500px;
+}
+
+.slick-slide img {
+    width: 100%;
+    height: 500px;
+}
+.home-bx{
+    height: 341px !important;
+}
+.tp-product__filter select{
+    position: relative;
+    background: #fff;
+    border-radius: 0;
+    padding: 0px 30px;
+    padding-right: 80px;
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    border: 1px solid #e6e9e9;
+    font-size: 14px;
+    color: #000000;
+}
+
+.tp-fea-product__thumb img {
+    border-radius: 15px;
+    width: 100%;
+    transition: 0.5s;
+}
+
+
+.home_about_content{
+    text-align:left;
+}
+
+.home_about_content h2{
+font-size:35px;
+font-weight:500;
+}
+
+.home_about_content span{
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 2;
+    color: #d33131;
+}
+
+.home_about_content p{
+    font-size: 15px;
+    font-weight: 400;;
+}
+
+.home_product_heading h2{
+    font-size:35px;
+    font-weight: 500;
+}
+
+.home_product_heading h2 span{
+    color: #d33131;
+    text-decoration: underline;
+}
+
+.card {
+    position: relative;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0);
+    height: 500px;
+    overflow: hidden;
+   
+}
+
+.card > figure {
+    width: 90%;
+    margin: 20px auto 0 auto;
+}
+
+.card > figure > img {
+    width: 100%;
+}
+
+.details {
+    background-color: #FFF;
+    border-radius: 10px;
+    padding: 20px;
+    position: absolute;
+    top: 413px;
+    width: 100%;
+    transition: box-shadow .3s ease-in-out,
+                top .3s ease-in-out;
+}
+
+.card:hover .details {
+    box-shadow: 0 -5px 10px rgba(0,0,0,0.3);
+    top: 282px;
+}
+
+.details > .min-details,
+.details > .options,
+.details > .options > .options-size,
+.details > .options > .options-colors {
+    margin-bottom: 20px;
+}
+
+.details > .min-details {
+    display: flex;
+    justify-content: space-between;
+}
+
+.details > .min-details > h1 > span {
+    color: #7B7B7B;
+    display: block;
+    font-size: .9rem;
+    font-weight: 400;
+}
+
+.details > .options h1 {
+    margin-bottom: 5px;
+}
+
+.details > .options ul {
+    list-style-type: none;
+    display: flex;
+}
+
+.details > .options ul li {
+    border-radius: 50%;
+    cursor: pointer;
+    height: 30px;
+    line-height: 30px;
+    margin-right: 5px;
+    text-align: center;
+    width: 30px;
+}
+
+.options-size > ul > li {
+    background-color: rgba(0,0,0,0.5);
+    color: #FFF;
+    font-size: .7rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    transition: background-color .3s ease-in-out;
+}
+
+.options-size > ul > li:hover {
+    background-color: #192a56;
+}
+
+.options-colors > ul > li {
+    border: none;
+}
+
+.options-colors > ul > li:nth-child(1) {
+    background-color: #FF1;
+}
+
+.options-colors > ul > li:nth-child(2) {
+    background-color: #000;
+}
+
+.options-colors > ul > li:nth-child(3) {
+    background-color: #FB0000;
+}
+
+.options-colors > ul > li:nth-child(4) {
+    background-color: #FF69B4;
+}
+
+.options-colors > ul > li:nth-child(5) {
+    background-color: #192a56;
+}
+
+.btn {
+    background-color: #192a56;
+    border-radius: 5px;
+    color: #FFF;
+    display: block;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: capitalize;
+    width: 100%;
+    transition: box-shadow .3s ease-in-out,
+                transform .3s ease-in-out;
+}
+
+.btn:hover {
+  box-shadow: 0 5px 10px rgba(0,0,0,.3);
+  transform: translateY(-2px);
+}
+
+.tp-copyright-3__left-box p{
+    padding: 10px;
+}
+
+.tp-copyright-3__border{
+    height: unset;
+}
+
+/**/
+/* Global Styles for Full Width */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  /* Set the container to be full width */
+  .container {
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+    max-width: 100%;
+  }
+  
+  /* Home Section Styles */
+  .home-about-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 3rem 0;
+  }
+  
+  .home_about_content {
+    flex: 1;
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .home_about_images {
+    flex: 1;
+    padding: 2rem;
+  }
+  
+  .home_about_images img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  
+  /* Full Width Product Section */
+  .home_product_heading {
+    font-size: 2rem;
+    text-align: center;
+    margin: 2rem 0;
+  }
+  
+  .card {
+    position: relative;
+    overflow: hidden;
+    border: none;
+    transition: transform 0.3s ease;
+  }
+  
+  .product-figure {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  
+  /* Styling the image inside the product card */
+  .product-figure img {
+    width: 100%; /* Full width */
+    height: auto;
+    transition: transform 0.3s ease;
+    border-radius: 5px;
+  }
+  
+  /* Quick View Overlay (hidden by default) */
+  .quick-view {
+    position: absolute;
+    bottom: -100%; /* Initially hidden completely below the product card */
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    transition: bottom 0.4s ease;
+    z-index: 1; /* Ensure Quick View is above the product image */
+  }
+  
+  /* When hovering over the card, show the Quick View */
+  .card:hover .quick-view {
+    bottom: 0; /* Slide in the Quick View layer */
+  }
+  
+  .quick-view p {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
+  /* Hover Effects: Show Quick View + Scale Image */
+  .card:hover .product-figure img {
+    transform: scale(1.05); /* Slight zoom-in effect */
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Ensure all product images are responsive */
+  @media (max-width: 768px) {
+    .home_product_heading {
+      font-size: 1.5rem;
+    }
+  
+    .home-about-section {
+      flex-direction: column;
+    }
+  
+    .home_about_content,
+    .home_about_images {
+      flex: none;
+      width: 100%;
+      text-align: center;
+    }
+  
+    .product-figure img {
+      width: 100%;
+    }
+  }
+  
