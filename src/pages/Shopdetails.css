@@ -1,0 +1,81 @@
+@import "~react-image-gallery/styles/css/image-gallery.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* styles.css */
+:root {
+  --gold: #fde047;
+}
+
+/* Additional CSS rules for styling your React components */
+
+@layer base {
+  button {
+    @apply border border-black rounded-xl px-5 py-1;
+  }
+}
+
+.react-rater-star.is-active-half:before {
+  color: var(--gold) !important;
+}
+
+.react-rater-star.is-active {
+  color: var(--gold) !important;
+}
+
+.image-container {
+  position: relative;
+  display: inline-block;
+}
+
+/* Style for the zoomable image */
+.zoom-image-container {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
+/* Style for the lens */
+.zoom-lens {
+  position: absolute;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  cursor: crosshair;
+  background-color: rgba(255, 255, 255, 0.3);
+  width: 100px; /* Lens size */
+  height: 100px; /* Lens size */
+  display: none;
+}
+
+/* Show lens when hovering over the image */
+.image-container:hover .zoom-lens {
+  display: block;
+}
+
+/* Style for zoomed image */
+.zoomable-image {
+  transition: transform 0.2s ease;
+  object-fit: cover; /* Ensures the image fills the container without distortion */
+}
+
+
+.zoom-lens {
+  position: absolute;
+  border: 2px solid #000;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  pointer-events: none;
+  visibility: hidden;
+  background-repeat: no-repeat;
+  z-index: 10;
+}
+.image-container {
+  position: relative;
+  overflow: hidden;
+}
+.zoom-image-container img {
+  width: 100%;
+  display: block;
+}
