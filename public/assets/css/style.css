@@ -345,6 +345,50 @@ input[type=color] {
 /*---------------------------------
     common classes css start 
 ---------------------------------*/
+
+.text-logo-1 {
+  color: #FF4E8D;
+}
+
+.text-logo-2 {
+  color: #3E8DFF;
+}
+
+.navBar {
+  justify-content: center;
+}
+
+.navText {
+  font-family: "Oswald"!important;
+  font-size: large!important;
+  font-weight: bold!important;
+  color: #AE34E8!important;
+  min-width: 10rem!important;
+}
+
+.navText.active {
+  color: #F43278!important;
+  text-decoration: underline;
+}
+
+.navText:hover {
+  color: #F43278!important;
+}
+
+.navText  > .nav-link {
+  font-weight: bold!important;
+  color: #AE34E8!important;
+}
+
+.navDropdownCustom .dropdown-toggle::after {
+  display: none !important;
+}
+
+.navText  > .nav-link:hover {
+  font-weight: bold!important;
+  color: #AE34E8!important;
+}
+
 .w-img img {
   width: 100%;
 }

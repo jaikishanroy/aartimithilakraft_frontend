@@ -1,13 +1,18 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import SliderComponent from "./Slider";
 import Footer from "./Footer";
 import { getBlocks } from "../helper/https";
+import QuickViewComponent from "./QuickView";
+import Blogs from "./BlogSlider";
 
 const Home = () => {
   const [block1, setBlock1] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const imgurl = "http://localhost:8000/";
+
+  const SLIDER_WIDTH = 400;
+  const MAX_WIDTH = 900;
 
   useEffect(() => {
     getBlocks({ block: 2 })
@@ -30,58 +35,60 @@ const Home = () => {
     return <div className="error-message"><p>{error}</p></div>;
   }
 
+  const block2 = [
+    {
+      id: 1,
+      name: "Radhe Krishna 1",
+      cat_image: "assets/img/topSellingItems/item-1.png",
+    },
+    {
+      id: 2,
+      name: "Radhe Krishna 2",
+      cat_image: "assets/img/topSellingItems/item-2.png",
+    },
+    {
+      id: 3,
+      name: "Radhe Krishna 3",
+      cat_image: "assets/img/topSellingItems/item-3.png",
+    },
+    {
+      id: 4,
+      name: "Radhe Krishna 4",
+      cat_image: "assets/img/topSellingItems/item-4.png",
+    },
+    {
+      id: 5,
+      name: "Radhe Krishna 5s",
+      cat_image: "assets/img/topSellingItems/item-5.png",
+    },
+  ];
+
   return (
     <div>
+      
       <SliderComponent />
 
       <div className="home-about-section">
         <div className="home_about_content">
           <h2>Welcome to Aarti Mithila Kraft</h2>
-          <span>Preserving Art & Promoting Artisans</span>
-          <p>
-            At Aarti Mithila Kaft, we bring the vibrant and intricate art
-            of Mithila from the heart of Bihar to the world. Each piece tells
-            a story rooted in age-old traditions, meticulously handcrafted
-            with passion and precision.
+          <span>Preserving Tradition, Elevating Artisans</span>
+          <p style={{ textAlign: 'justify' }}>
+            At Aarti Mithila Kraft, our mission is to preserve the timeless beauty of Mithila artistry while uplifting the artisans who pour their heart into every creation. We bring the vibrant, intricate, and meaningful art of Mithila from the cultural heartland of Bihar to the global stage. Every piece we offer is more than just a product—it is a narrative of heritage, devotion, and ancestral wisdom passed down through generations. Handcrafted with meticulous precision, each artwork reflects the artisan’s emotions, patience, and connection to their roots. By choosing Aarti Mithila Kraft, you not only welcome a unique handmade art piece into your space but also support sustainable livelihoods and help keep a centuries-old tradition alive.
           </p>
         </div>
 
         <div className="home_about_images">
-          <img src="assets/img/banner/about.jpeg" alt="About Aarti Mithila Kraft" />
+          <img src="assets/img/banner/welcome.png" alt="About Aarti Mithila Kraft" />
         </div>
       </div>
 
-      <div className="container full-width-products">
-        <div className="row">
-          <div className="col-12">
-            <h2 className="home_product_heading">Kurta's</h2>
-          </div>
-
-          {block1 && block1.length > 0 ? (
-            block1.map((prod) => (
-              <div className="col-12 col-md-3" key={prod.id}>
-                <div className="card home-bx">
-                  <figure className="product-figure">
-                    <img
-                      src={imgurl + (prod.cat_image || "fallback-image.jpg")}
-                      alt={prod.name || "Product"}
-                    />
-                    <div className="quick-view">
-                      <p>Quick View</p>
-                    </div>
-                  </figure>
-                </div>
-              </div>
-            ))
-          ) : (
-            <p>No products available</p>
-          )}
-        </div>
+      <div>
+        <QuickViewComponent product1={block2} />
       </div>
 
-      <Footer />
     </div>
   );
+
 };
 
 export default Home;

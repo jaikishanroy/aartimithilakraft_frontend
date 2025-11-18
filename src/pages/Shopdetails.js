@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from 'react';
 import '../pages/custom.css'
 import { getProduct } from '../helper/https';
 import { all } from 'axios';
-import { useParams } from 'react-router-dom';
 import { baseurl } from '../helper/https';
 import Zoom from 'react-medium-image-zoom';
 import 'react-medium-image-zoom/dist/styles.css'; // Styles for zoom effect
@@ -15,24 +14,14 @@ import Rater from "react-rater";
 import "react-rater/lib/react-rater.css";
 import './Shopdetails.css';
 
-const Shopdetails = () => {
+const Shopdetails = ( { product } ) => {
     const lensRef = useRef(null); 
    
-    const [product, setProduct] = useState([]);
-    const param = useParams();
+    // const [product, setProduct] = useState([]);
     const imgurl = "http://localhost:8000/";
 
 
     useEffect(() => {
-        console.log(param.id);
-        getProduct(param.id).then((res) => {
-            console.log(res);
-            setProduct(res.data.product);
-        }).catch((err) => {
-            console.log(err);
-            debugger;
-        })
-
     }, [])
    
     
@@ -40,7 +29,7 @@ const Shopdetails = () => {
     return (
 
         <main>
-            <div class="tp-product-details-area pt-130">
+            <div class="tp-product-details-area">
                 <div class="container">
 
                     <div class="row">
@@ -84,22 +73,6 @@ const Shopdetails = () => {
                                 </div>
                                 <div class="tp-shop-details__product-info">
                                     <ul>
-                                        {/* <li><span>color :</span>
-                                            <div class="tp-shop-details__variation-list">
-                                                <button type="button" class="color tp-color-variation-btn">
-                                                    <span></span>
-                                                </button>
-                                                <button type="button" class="color tp-color-variation-btn">
-                                                    <span class="red"></span>
-                                                </button>
-                                                <button type="button" class="color tp-color-variation-btn">
-                                                    <span class="blue"></span>
-                                                </button>
-                                                <button type="button" class="color tp-color-variation-btn">
-                                                    <span class="purple"></span>
-                                                </button>
-                                            </div>
-                                        </li> */}
                                         <li><span>Size :NA</span>
                                             <div class="tp-shop-details__size">
 
@@ -108,25 +81,7 @@ const Shopdetails = () => {
 
                                     </ul>
                                 </div>
-                                {/* <div class="tp-shop-details__social">
-                                    <span>Share:</span>
-                                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                                    <a href="#"><i class="fa-brands fa-vimeo-v"></i></a>
-                                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-                                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                                </div> */}
-                                {/* <div class="tp-shop-details__quantity-wrap mt-30 d-flex align-items-center">
-                                    <div class="tp-shop-details__btn mr-30">
-                                        <a class="tp-btn-square" href="cart.html">Add To Cart</a>
-                                    </div>
-                                    <div class="tp-shop-details__quantity-box">
-                                        <div class="tp-shop-details__quantity">
-                                            <div class="tp-cart-minus"><i class="fal fa-minus"></i></div>
-                                            <input type="text" value="1" />
-                                            <div class="tp-cart-plus"><i class="fal fa-plus"></i></div>
-                                        </div>
-                                    </div>
-                                </div> */}
+                                
                             </div>
                         </div>
                     </div>

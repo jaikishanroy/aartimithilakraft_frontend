@@ -14,9 +14,9 @@ const root = createRoot(container);
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <HashRouter>
+      <BrowserRouter>
       <App />
-      </HashRouter>
+      </BrowserRouter>
     </Provider>
   </React.StrictMode>
 );

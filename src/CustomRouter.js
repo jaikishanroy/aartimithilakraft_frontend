@@ -30,6 +30,10 @@ import Cookies from "js-cookie";
 import Logout from "./pages/Logout";
 import Shop from "./pages/Shop";
 import Shopdetails from "./pages/Shopdetails";
+import About from "./pages/AboutUs";
+import Contact from "./pages/ContactUs";
+import Reviews from "./pages/Reviews";
+import Gallery from "./pages/Gallery";
 import Home from "./pages/Home";
 import BootstrapNav from "./pages/BootstrapNav";
 import HomeBlock from "./pages/admin/components/HomeBlock";
@@ -75,13 +79,16 @@ function BasicLayout() {
     return (
         <Routes>
             <Route path="/" element={<BasicLayout />} >
-             {/* <Route path="/" element ={<Home />} /> */}
-             <Route index element={<Home />} /> 
-                <Route path="/login" element ={<Login />} />
-                <Route path="/register" element ={<Register />} />
-                <Route path="/logout" element ={<Logout />} />
-                <Route path="/shop" element ={<Shop />} />
-                <Route path="/shopdetails/:id" element ={<Shopdetails />} />
+              <Route index element={<Home />} /> 
+              <Route path="login" element ={<Login />} />
+              <Route path="register" element ={<Register />} />
+              <Route path="logout" element ={<Logout />} />
+              <Route path="shop" element ={<Shop />} />
+              <Route path="shopdetails/:id" element ={<Shopdetails />} />
+              <Route path="about-us" element ={<About />} />
+              <Route path="contact-us" element ={<Contact />} />
+              <Route path="Reviews" element ={<Reviews />} />
+              <Route path="Highlights" element ={<Gallery />} />
             </Route>
             <Route path="/admin" element={<ProtectedRoute isAuthenticated={true} />}>
               <Route path="/admin/product" element ={<ProductForm />} />
@@ -97,8 +104,6 @@ function BasicLayout() {
             <Route  path="/admin/register" element ={<AdminRegister />} />
             <Route path='/user' element={<Guard path='/user' token="user-token" routeRedirect="/user/login" component={UserPrivateRouter} />} />
             <Route path ='/admin' element={<Guard path='/admin' token="admin-token" routeRedirect="/admin/login" component={AdminPrivateRouter} /> } /> */}
-
-            
         </Routes>
     )
 }

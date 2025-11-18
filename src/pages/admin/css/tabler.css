@@ -14035,7 +14035,7 @@ textarea.form-control-lg {
     display: inline-block !important;
   }
   .d-xl-block {
-    display: block !important;
+    display: inline-block !important;
   }
   .d-xl-grid {
     display: grid !important;

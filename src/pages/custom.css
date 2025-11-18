@@ -17,7 +17,7 @@ body{
     height: 500px;
 }
 .home-bx{
-    height: 341px !important;
+    height: 500px !important;
 }
 .tp-product__filter select{
     position: relative;
@@ -230,10 +230,11 @@ body, html {
     flex-wrap: wrap;
     justify-content: space-between;
     padding: 3rem 0;
+    padding-bottom: 0px;
   }
   
   .home_about_content {
-    flex: 1;
+    flex: 2;
     padding: 2rem;
     text-align: center;
   }

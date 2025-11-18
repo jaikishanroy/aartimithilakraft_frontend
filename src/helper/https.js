@@ -5,8 +5,8 @@ import { useEffect,useState } from "react";
 
 const token = Cookies.get('token');
 
-export const baseurl = 'http://localhost:8000';
-// export const baseurl = 'https://aartimithilakraft.com/api'
+// export const baseurl = 'http://localhost:8000';
+export const baseurl = 'https://aartimithilakraft.com/api'
 
 export function login(payload){
    
