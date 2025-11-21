@@ -50,7 +50,7 @@ const Reviews = () => {
                                 <div className="row">
                                     <Row className="justify-content-md-center">
                                         <Col md={4}><img src="/assets/img/logo1.png" alt="Main Logo" /></Col>
-                                        <Col md={4} style={{ border: "var(--tblr-border-width) solid var(--tblr-border-color)", padding: "2rem" }}>
+                                        <Col md={4} className="card p-3 shadow-lg">
                                         <h3 className="mb-4 text-center">Share Your Experience</h3>
                                         <Form onSubmit={handleSubmit}>
                                             <Form.Group className="mb-3" controlId="bloggerName">
