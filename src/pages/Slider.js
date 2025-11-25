@@ -20,14 +20,14 @@ const SliderComponent = ()=>{
     ];
     return (
         <div className="slider-container" style={{ backgroundColor: '#1A1A1A' }}>
-        <Slider {...settings}>
-            {images.map((src, index) => (
-                <div key={index}>
-                    <img src={src} alt={`Slide ${index + 1}`} style={{ width: 'auto', margin: 'auto' }} />
-                </div>
-            ))}
-        </Slider>
-    </div>
+            <Slider {...settings}>
+                {images.map((src, index) => (
+                    <div key={index}>
+                        <img src={src} alt={`Slide ${index + 1}`} style={{ width: 'auto', margin: 'auto' }} />
+                    </div>
+                ))}
+            </Slider>
+        </div>
     );
 }
 

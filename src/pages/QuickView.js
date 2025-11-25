@@ -34,7 +34,27 @@ const QuickViewComponent = ( { product1 } ) => {
     slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 2000
+    autoplaySpeed: 2000,
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 576,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
   };
 
   const [open, setOpen] = useState(false)
@@ -50,23 +70,27 @@ const QuickViewComponent = ( { product1 } ) => {
     <>
       <div className="container full-width-products">
         <div className="row">
+          
           <div className="col-12">
             <h2 className="home_product_heading">Customer Favorites</h2>
           </div>
 
           <div className="slider-container">
             <Slider {...settings}>
+
               {product1 && product1.length > 0 ? (
                 product1.map((prod) => (
-                  <div className="col-12 col-md-3" key={prod.id}>
+                  <div key={prod.id} className="product-slide">
                     <div className="card home-bx">
                       <figure className="product-figure">
-                        <a href='#'><img
-                          src={(prod.cat_image || "fallback-image.jpg")}
-                          alt={prod.name || "Product"}
-                          style={{ width: '100%', height: '100%' }}
-                          onClick={() => viewProduct(prod)}
-                        /></a>
+                        <a href="#">
+                          <img
+                            src={prod.cat_image || "fallback-image.jpg"}
+                            alt={prod.name || "Product"}
+                            className="product-image"
+                            onClick={() => viewProduct(prod)}
+                          />
+                        </a>
                       </figure>
                     </div>
                   </div>
@@ -74,9 +98,10 @@ const QuickViewComponent = ( { product1 } ) => {
               ) : (
                 <p>No products available</p>
               )}
+
             </Slider>
           </div>
-    
+
         </div>
       </div>
 
