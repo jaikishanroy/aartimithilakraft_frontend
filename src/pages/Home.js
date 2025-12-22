@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import SliderComponent from "./Slider";
 import Footer from "./Footer";
-import { getBlocks } from "../helper/https";
+import { blockProduct, getBlocks } from "../helper/https";
 import QuickViewComponent from "./QuickView";
 import Blogs from "./BlogSlider";
 
@@ -14,28 +14,7 @@ const Home = () => {
   const SLIDER_WIDTH = 400;
   const MAX_WIDTH = 900;
 
-  useEffect(() => {
-    getBlocks({ block: 2 })
-      .then((res) => {
-        setBlock1(res.data);
-        setLoading(false);
-      })
-      .catch((err) => {
-        console.error("Error fetching data:", err);
-        setError("Failed to load blocks. Please try again later.");
-        setLoading(false);
-      });
-  }, []);
-
-  if (loading) {
-    return <div className="loading-spinner"><p>Loading...</p></div>;
-  }
-
-  if (error) {
-    return <div className="error-message"><p>{error}</p></div>;
-  }
-
-  const block2 = [
+  let block2 = [
     {
       id: 1,
       name: "Radhe Krishna 1",
@@ -63,6 +42,32 @@ const Home = () => {
     },
   ];
 
+  useEffect(() => {
+    getBlocks()
+      .then((res) => {
+        const formattedBlocks = res.data?.[0]?.products?.map((item) => ({
+          id: item.id,
+          name: item.name,
+          cat_image: item.images?.[0]?.original,
+        }));
+        setBlock1(formattedBlocks || block2);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error("Error fetching data:", err);
+        setError("Failed to load blocks. Please try again later.");
+        setLoading(false);
+      });
+  }, []);
+
+  if (loading) {
+    return <div className="loading-spinner"><p>Loading...</p></div>;
+  }
+
+  if (error) {
+    return <div className="error-message"><p>{error}</p></div>;
+  }
+
   return (
     <div>
       
@@ -83,7 +88,7 @@ const Home = () => {
       </div>
 
       <div>
-        <QuickViewComponent product1={block2} />
+        <QuickViewComponent product1={block1} />
       </div>
 
     </div>

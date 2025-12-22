@@ -63,13 +63,13 @@ export function saveBlock(payload=''){
 }
 
 
-export function getBlocks(param){
+export function getBlocks(){
     const header={
         "headers":{
             "Content-type":"application/json"
          }
     }
-    return axios.get(`${baseurl}/get_product_by_block`,{params:param},header)
+    return axios.get(`${baseurl}/all_blocks`,header)
 
 }
 export function useDebounce(value, delay) {
