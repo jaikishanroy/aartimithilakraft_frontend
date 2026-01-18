@@ -1,5 +1,7 @@
 import React from "react";
+import { useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
+import { allCat } from '../helper/https';
 import {
   Navbar,
   Nav,
@@ -13,6 +15,23 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './BootstrapNav.css'
 
 const BootstrapNav = () => {
+  const [cats, setCats] = useState([]);
+
+  useEffect(() => {
+      allCat().then((res) => {
+          setCats(res.data.all_cat)
+      }).catch((err) => {
+          alert("error happend")
+      })
+  }, [])
+
+  const all_cats = (
+    cats.length > 0 && cats.map((obj,index) => {
+      return (
+        <NavDropdown.Item as={Link} to={ "/shop?type=" + obj.slug }>{obj.name}</NavDropdown.Item>
+      )
+    })
+  )
   return (
     <>
       <div id="preloader">
@@ -106,17 +125,14 @@ const BootstrapNav = () => {
               <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mx-auto navBar">
 
-                  <Nav.Link as={Link} to="/" className="navText">Home</Nav.Link>
+                  <Nav.Link as={Link} to="/" key="Home" className="navText">Home</Nav.Link>
 
                   <NavDropdown
                     title={<>Products <span className="customArrow">▼</span></>}
                     id="basic-nav-dropdown"
                     className="navText navDropdownCustom"
                   >
-                    <NavDropdown.Item as={Link} to="/shop?type=Sarees">Sarees</NavDropdown.Item>
-                    <NavDropdown.Item as={Link} to="/shop?type=Kurtis">Kurtis</NavDropdown.Item>
-                    <NavDropdown.Item as={Link} to="/shop?type=Home Decoration">Home Decoration</NavDropdown.Item>
-                    <NavDropdown.Item as={Link} to="/shop?type=Bedsheets">Bedsheets</NavDropdown.Item>
+                    {all_cats}
                   </NavDropdown>
 
                   <Nav.Link as={Link} to="/about-us" className="navText">About Us</Nav.Link>

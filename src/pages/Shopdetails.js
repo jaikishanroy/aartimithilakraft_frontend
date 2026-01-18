@@ -20,20 +20,14 @@ const Shopdetails = ( { product } ) => {
     // const [product, setProduct] = useState([]);
     const imgurl = "http://localhost:8000/";
 
-
-    useEffect(() => {
-    }, [])
-   
-    
-
     return (
 
         <main>
-            <div class="tp-product-details-area">
-                <div class="container">
+            <div className="tp-product-details-area">
+                <div className="container">
 
-                    <div class="row">
-                        <div class="col-xl-6 col-lg-6">
+                    <div className="row">
+                        <div className="col-xl-6 col-lg-6">
                             {product.images && (
                                 <div className="image-container" >
                                     <div ref={lensRef} className="zoom-lens"></div><ReactImageGallery
@@ -58,30 +52,34 @@ const Shopdetails = ( { product } ) => {
                                 )}
                             /></div>)}
                         </div>
-                        <div class="col-xl-6 col-lg-6">
-                            <div class="tp-shop-details__right-warp">
-                                <h3 class="tp-shop-details__title-sm">{product.name}</h3>
+                        <div className="col-xl-6 col-lg-6">
+                            <div className="tp-shop-details__right-warp">
+                                <h3 className="tp-shop-details__title-sm">{product.name}</h3>
                                
-                                <div class="tp-shop-details__price">
-                                    <span>{product.price}</span>
+                                <div className="tp-shop-details__price">
+                                    <span>₹ {product.price}</span>
                                     {/* <del>$32.00</del>
-                                        <span class="red-color">-34%</span> */}
+                                        <span className="red-color">-34%</span> */}
                                 </div>
-                                <div class="tp-shop-details__text-2">
+                                <div className="tp-shop-details__text-2">
                                     <p>{product.description}
                                     </p>
                                 </div>
-                                <div class="tp-shop-details__product-info">
+                                <div className="tp-shop-details__product-info">
                                     <ul>
-                                        <li><span>Size :NA</span>
-                                            <div class="tp-shop-details__size">
+                                        <li><span></span>
+                                            <div className="tp-shop-details__size">
 
                                             </div>
                                         </li>
 
                                     </ul>
                                 </div>
-                                
+                                <div className="tp-shop-details__product-info">
+                                    <a href='#' className="btn btn-dark w-100 py-2 mt-3">
+                                        Order It
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>

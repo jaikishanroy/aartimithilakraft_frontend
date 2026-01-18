@@ -26,13 +26,13 @@ export function productSubmit(payload){
     }
     return axios.post(baseurl+'/product',payload,header)
 }
-export function allProduct(){
+export function allProduct(type){
     const header={
         "headers":{
             "Content-type":"application/json"
          }
     }
-    return axios.get(`${baseurl}/products`,header)
+    return axios.get(`${baseurl}/cat/${type}`,header)
 }
 export function getProduct(id){
     const header={
@@ -82,4 +82,12 @@ export function useDebounce(value, delay) {
     }, [value, delay]);
   
     return debouncedValue;
-  }
+}
+export function allCat(){
+    const header={
+        "headers":{
+            "Content-type":"application/json"
+         }
+    }
+    return axios.get(`${baseurl}/all_cat`,header)
+}

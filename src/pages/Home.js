@@ -45,12 +45,12 @@ const Home = () => {
   useEffect(() => {
     getBlocks()
       .then((res) => {
-        const formattedBlocks = res.data?.[0]?.products?.map((item) => ({
-          id: item.id,
-          name: item.name,
-          cat_image: item.images?.[0]?.original,
-        }));
-        setBlock1(formattedBlocks || block2);
+        // const formattedBlocks = res.data?.[0]?.products?.map((item) => ({
+        //   id: item.id,
+        //   name: item.name,
+        //   cat_image: item.images?.[0]?.original,
+        // }));
+        setBlock1(res.data?.[0]?.products || block2);
         setLoading(false);
       })
       .catch((err) => {

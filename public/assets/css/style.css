@@ -472,7 +472,7 @@ input[type=color] {
 input[type=text], input[type=email], input[type=tel], input[type=number], input[type=password], input[type=url], textarea {
   outline: none;
   background-color: #fff;
-  height: 64px;
+  height: 32px;
   width: 100%;
   line-height: 56px;
   font-size: 14px;
@@ -480,6 +480,10 @@ input[type=text], input[type=email], input[type=tel], input[type=number], input[
   padding-left: 25px;
   padding-right: 25px;
   border: 0;
+}
+
+textarea {
+  height: 128px;
 }
 
 .tp-main-btn {
